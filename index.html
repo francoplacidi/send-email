@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    
+    <title>Formulario UNL</title>
+  </head>
+  <body>
+    <div class="container my-5">
+      <form action="correo.php" method="POST">
+        <input
+          type="text"
+          name="nombre"
+          placeholder="Ingresa nombre"
+          class="form-control my-3"
+          required
+          pattern="[a-zA-Z]{2,10}"
+        />
+        <br /><br />
+        <input
+          type="email"
+          name="correo"
+          id="correo"
+          placeholder="Ingresa tu email..."
+          class="form-control"
+          required
+        />
+        <br /><br />
+        <input type="text" name="asunto" placeholder="asunto" required />
+        <br /><br />
+        <textarea
+          name="msg"
+          placeholder="mensaje"
+          type="text"
+          id=""
+          cols="10"
+          rows="5"
+          class="form-control"
+          required
+        ></textarea> 
+        <br /><br /><br />
+        <input type="submit" onclick="validarCorreo(form.correo.value)">
+      </form>
+    </div>
+    
+    <?php
+        include("correo.php"); 
+    ?>
+
+    <script src="js/validacion.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
