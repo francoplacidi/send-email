@@ -1,25 +1,19 @@
-function validarCorreo(correo){
-    var expReg = /^[a-z0-9]*@unl.edu.ar/;
-    var esValido = expReg.test(correo);
-    if(!esValido){
-        alert("El correo NO es válido!");
-    }
-}
+//Enabling submit.
 
-function habilitar(){
-    nombre = document.getElementById("nombre").value;
-    correo = document.getElementById("correo").value;
-    asunto = document.getElementById("asunto").value;
-    msg = document.getElementById("msg").value;
+function enable(){
+    name = document.getElementById("names").value;
+    mail = document.getElementById("mail").value;
+    affair = document.getElementById("affair").value;
+    msg = document.getElementById("message").value;
     val = 0;
 
-    if(nombre == ""){
+    if(name == ""){
         val++;
     }
-    if(correo == ""){
+    if(mail == ""){
         val++;
     }
-    if(asunto == ""){
+    if(affair == ""){
         val++;
     }
     if(msg == ""){
@@ -33,10 +27,10 @@ function habilitar(){
     }
 }
 
-document.getElementById("nombre").addEventListener("keyup", habilitar);
-document.getElementById("correo").addEventListener("keyup", habilitar);
-document.getElementById("asunto").addEventListener("keyup", habilitar);
-document.getElementById("msg").addEventListener("keyup", habilitar)
+document.getElementById("names").addEventListener("keyup", enable);
+document.getElementById("mail").addEventListener("keyup", enable);
+document.getElementById("affair").addEventListener("keyup", enable);
+document.getElementById("message").addEventListener("keyup", enable)
 document.getElementById("btn").addEventListener("click", () => {
-    console.log("Se ha completado y enviado el formulario !!");
+    console.log("The form has been completed !!");
 });
