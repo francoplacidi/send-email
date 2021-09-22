@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -13,34 +13,35 @@
       crossorigin="anonymous"
     />
     
-    <title>Formulario UNL</title>
+    <title>Send Email</title>
   </head>
   <body>
     <div class="container my-5">
-      <form action="correo.php" method="POST">
+      <form action="mail.php" method="POST">
         <input
           type="text"
-          name="nombre"
-          placeholder="Ingresa nombre"
+          name="names"
+          placeholder="Enter your name"
           class="form-control my-3"
           required
-          pattern="[a-zA-Z]{2,10}"
+          pattern="[a-zA-Z]{2,12}+[a-zA-Z]{2,12}+[a-zA-Z]{2,12}"
         />
         <br /><br />
         <input
           type="email"
-          name="correo"
-          id="correo"
-          placeholder="Ingresa tu email..."
+          name="mail"
+          id="mail"
+          placeholder="Enter your email..."
           class="form-control"
           required
+          pattern=".+@gmail.com"
         />
         <br /><br />
-        <input type="text" name="asunto" placeholder="asunto" required />
+        <input type="text" name="affair" placeholder="affair" required />
         <br /><br />
         <textarea
-          name="msg"
-          placeholder="mensaje"
+          name="message"
+          placeholder="Writes..."
           type="text"
           id=""
           cols="10"
@@ -49,15 +50,15 @@
           required
         ></textarea> 
         <br /><br /><br />
-        <input type="submit" onclick="validarCorreo(form.correo.value)">
+        <input type="submit">
       </form>
     </div>
     
     <?php
-        include("correo.php"); 
+        include("mail.php"); 
     ?>
 
-    <script src="js/validacion.js"></script>
+    <script src="js/validation.js"></script>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
