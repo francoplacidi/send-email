@@ -1,16 +1,16 @@
     <?php
-        $destinatario = 'youremail@gmail.com';
+        $addressee = 'youremail@gmail.com';
 
-        $nombre = $_POST['nombre'];
-        $correo = $_POST['correo'];
-        $asunto = $_POST['asunto'];
+        $name = $_POST['name'];
+        $mail = $_POST['mail'];
+        $affair = $_POST['affair'];
         $msg = $_POST['msg'];
 
-        $header = "Formulario UNL";
-        $mensajeCompleto = $msg . "\nAtentamente: " . $nombre;
+        $header = "Form";
+        $fullMessage = $msg . "\nAttentively: " . $name;
 
-        mail($destinatario, $asunto, $mensajeCompleto, $header);  
+        mail($addressee, $affair, $fullMessage, $header);  
         
-        echo "<script>alert('Correo enviado con éxito !!')</script>";
+        echo "<script>alert('Mail sent successfully !!')</script>";
         echo "<script>setTimeout(\"location.href='index.html'\",1000)</script>"; 
     ?>
